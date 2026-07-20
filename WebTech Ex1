@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness Blog</title>
+
+    <style>
+        body {
+            background-color: #eafaf1;
+            color: #2c3e50;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: darkgreen;
+            text-align: center;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+
+        div {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <div>
+        <h1 id="top">Health & Wellness Blog</h1>
+        <p>
+            Welcome to our Health & Wellness Blog. Here you will find useful
+            information about healthy eating, exercise, mental wellness, and
+            lifestyle habits that improve your overall health.
+        </p>
+    </div>
+
+    <!-- Healthy Living Section -->
+    <div id="healthy-living">
+        <h2>Healthy Living Tips</h2>
+
+        <p>
+            A healthy lifestyle includes balanced nutrition, regular exercise,
+            quality sleep, and stress management.
+        </p>
+
+        <p>
+            Drinking enough water and eating fresh fruits and vegetables can
+            significantly improve your health.
+        </p>
+
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500"
+            alt="Healthy Food" width="350">
+
+    </div>
+
+    <!-- Hyperlinks Section -->
+    <div>
+        <h2>Useful Links</h2>
+
+        <p>
+            External Link:
+            <a href="https://www.who.int" target="_blank">
+                Visit World Health Organization
+            </a>
+        </p>
+
+        <p>
+            Internal Link:
+            <a href="#healthy-living">Go to Healthy Living Section</a>
+        </p>
+
+        <p>
+            Bookmark Link:
+            <a href="#top">Back to Top</a>
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:healthblog@gmail.com">
+                healthblog@gmail.com
+            </a>
+        </p>
+
+        <p>
+            Phone:
+            <a href="tel:+919876543210">
+                +91 98765 43210
+            </a>
+        </p>
+
+        <p>
+            Clickable Image:
+            <a href="https://www.healthline.com" target="_blank">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=250"
+                    alt="Healthy Lifestyle" width="250">
+            </a>
+        </p>
+
+    </div>
+
+    <!-- Table Section -->
+    <div>
+        <h2>Weekly Wellness Plan</h2>
+
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Exercise</th>
+                <th>Diet</th>
+            </tr>
+
+            <tr>
+                <td>Monday</td>
+                <td>Walking</td>
+                <td>Fruits & Vegetables</td>
+            </tr>
+
+            <tr>
+                <td>Wednesday</td>
+                <td>Yoga</td>
+                <td>Whole Grains</td>
+            </tr>
+
+            <tr>
+                <td>Friday</td>
+                <td>Cycling</td>
+                <td>Protein-rich Food</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- Description List -->
+    <div>
+        <h2>Health Terms</h2>
+
+        <dl>
+            <dt><b>Nutrition</b></dt>
+            <dd>The process of consuming food for growth and health.</dd>
+
+            <dt><b>Hydration</b></dt>
+            <dd>Maintaining the body's fluid balance by drinking water.</dd>
+
+            <dt><b>Fitness</b></dt>
+            <dd>The ability to perform daily activities with strength and energy.</dd>
+        </dl>
+
+    </div>
+
+    <!-- Ordered Nested List -->
+    <div>
+        <h2>Daily Wellness Routine</h2>
+
+        <ol>
+            <li>Morning
+                <ol>
+                    <li>Wake up early</li>
+                    <li>Drink warm water</li>
+                    <li>Exercise for 30 minutes</li>
+                </ol>
+            </li>
+
+            <li>Afternoon
+                <ol>
+                    <li>Eat a balanced lunch</li>
+                    <li>Stay hydrated</li>
+                </ol>
+            </li>
+
+            <li>Evening
+                <ol>
+                    <li>Walk for 20 minutes</li>
+                    <li>Sleep before 10 PM</li>
+                </ol>
+            </li>
+        </ol>
+
+    </div>
+
+    <!-- Unordered Nested List -->
+    <div>
+        <h2>Healthy Food Categories</h2>
+
+        <ul>
+            <li>Fruits
+                <ul>
+                    <li>Apple</li>
+                    <li>Orange</li>
+                </ul>
+            </li>
+
+            <li>Vegetables
+                <ul>
+                    <li>Spinach</li>
+                    <li>Carrot</li>
+                </ul>
+            </li>
+
+            <li>Protein
+                <ul>
+                    <li>Eggs</li>
+                    <li>Beans</li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- Footer -->
+    <div>
+        <h2>Conclusion</h2>
+
+        <p>
+            Healthy habits improve both physical and mental well-being.
+            Start making small positive changes today for a healthier future.
+        </p>
+    </div>
+
+</body>
+
+</html>
