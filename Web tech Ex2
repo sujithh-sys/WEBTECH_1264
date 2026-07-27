@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Health & Wellness Blog</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#eef7ee;
+}
+
+.container{
+width:90%;
+margin:auto;
+background:white;
+box-shadow:0px 0px 10px gray;
+}
+
+header{
+background:darkgreen;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+font-size:45px;
+}
+
+header p{
+font-size:18px;
+margin-top:10px;
+}
+
+nav{
+background:#145a32;
+padding:15px;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+}
+
+nav ul li{
+margin:0 20px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:20px;
+font-weight:bold;
+}
+
+nav ul li a:hover{
+color:yellow;
+}
+
+.banner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:30px;
+}
+
+.banner-text{
+width:45%;
+}
+
+.banner-text h2{
+color:darkgreen;
+font-size:35px;
+margin-bottom:20px;
+}
+
+.banner-text p{
+font-size:18px;
+line-height:1.8;
+text-align:justify;
+}
+
+.banner-image{
+width:50%;
+}
+
+.banner-image img{
+width:100%;
+border-radius:15px;
+}
+
+section{
+padding:25px;
+}
+
+h2{
+color:darkgreen;
+margin-bottom:15px;
+}
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table,th,td{
+border:1px solid black;
+}
+
+th{
+background:darkgreen;
+color:white;
+padding:12px;
+}
+
+td{
+padding:10px;
+text-align:center;
+}
+
+progress{
+width:300px;
+height:20px;
+}
+
+audio{
+width:100%;
+margin-top:20px;
+}
+
+footer{
+background:darkgreen;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Health & Wellness Blog Starts -->
+
+<div class="container">
+
+<header>
+
+<h1>🌿 Health & Wellness Blog 🌿</h1>
+
+<p>Your Daily Guide to Healthy Living</p>
+
+</header>
+
+<nav>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Nutrition</a></li>
+
+<li><a href="#">Fitness</a></li>
+
+<li><a href="#">Mental Health</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<div class="banner">
+
+<div class="banner-text">
+
+<h2>Healthy Body, Happy Life</h2>
+
+<p>
+Health is the greatest wealth. Eating nutritious food,
+exercising regularly, sleeping well, and maintaining a positive
+mindset can improve your quality of life and reduce the risk
+of diseases.
+</p>
+
+</div>
+
+<div class="banner-image">
+
+<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900"
+alt="Health and Wellness">
+
+</div>
+
+</div>
+<section>
+
+<h2>🏃 Daily Health Progress</h2>
+
+<p><b>Water Intake</b></p>
+<progress value="85" max="100"></progress>
+
+<br><br>
+
+<p><b>Fitness Goal</b></p>
+<progress value="75" max="100"></progress>
+
+<br><br>
+
+<p><b>Sleep Quality</b></p>
+<progress value="90" max="100"></progress>
+
+<br><br>
+
+<p><b>Mental Wellness</b></p>
+<progress value="80" max="100"></progress>
+
+</section>
+
+<section>
+
+<h2>🥗 Healthy Lifestyle Tips</h2>
+
+<table>
+
+<tr>
+
+<th>Habit</th>
+<th>Recommended Time</th>
+<th>Benefit</th>
+
+</tr>
+
+<tr>
+
+<td>Drink Water</td>
+<td>2–3 Litres Daily</td>
+<td>Keeps the body hydrated</td>
+
+</tr>
+
+<tr>
+
+<td>Morning Walk</td>
+<td>30 Minutes</td>
+<td>Improves heart health</td>
+
+</tr>
+
+<tr>
+
+<td>Eat Fruits</td>
+<td>Every Day</td>
+<td>Boosts immunity</td>
+
+</tr>
+
+<tr>
+
+<td>Exercise</td>
+<td>45 Minutes</td>
+<td>Builds strength</td>
+
+</tr>
+
+<tr>
+
+<td>Sleep</td>
+<td>7–8 Hours</td>
+<td>Better recovery</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section>
+
+<h2>🎧 Daily Health Advice</h2>
+
+<p>
+Listen to this audio for simple health and wellness tips.
+</p>
+
+<audio controls>
+
+<source src="audio/health_advice.mp3" type="audio/mpeg">
+
+Your browser does not support the audio element.
+
+</audio>
+
+</section>
+
+<section>
+
+<h2>🌍 Useful Health Websites</h2>
+
+<p>
+
+<a href="https://www.who.int" target="_blank">
+World Health Organization (WHO)
+</a>
+
+<br><br>
+
+<a href="https://www.nhp.gov.in" target="_blank">
+National Health Portal - India
+</a>
+
+</p>
+
+</section>
+
+<section>
+
+<h2>📄 Health Tips PDF</h2>
+
+<embed
+src="pdf/health_tips.pdf"
+type="application/pdf"
+width="100%"
+height="400">
+
+</section>
+
+<section>
+
+<h2>📍 Find a Nearby Hospital</h2>
+
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.204743830636!2d76.9558!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859c6b0d2a8bb%3A0x6a74d3d69d4bfeea!2sCoimbatore%20Medical%20College!5e0!3m2!1sen!2sin!4v1710000000000"
+width="100%"
+height="350"
+allowfullscreen=""
+loading="lazy">
+
+</iframe>
+
+</section>
+
+<section>
+
+<h2>📝 Health Assessment Form</h2>
+
+<form action="#" method="post">
+
+<fieldset>
+
+<legend>Personal Information</legend>
+
+<label>Full Name</label><br>
+
+<input type="text" placeholder="Enter your full name">
+
+<br><br>
+
+<label>Email Address</label><br>
+
+<input type="email" placeholder="Enter your email">
+
+<br><br>
+
+<label>Password</label><br>
+
+<input type="password" placeholder="Enter password">
+
+<br><br>
+
+<label>Phone Number</label><br>
+
+<input type="tel" placeholder="Enter phone number">
+<br><br>
+
+<label>Age</label><br>
+
+<input type="number" placeholder="Enter your age">
+
+<br><br>
+
+<label>Date of Birth</label><br>
+
+<input type="date">
+
+<br><br>
+
+<label>Appointment Time</label><br>
+
+<input type="time">
+
+<br><br>
+
+<label>Birth Month</label><br>
+
+<input type="month">
+
+<br><br>
+
+<label>Current Week</label><br>
+
+<input type="week">
+
+<br><br>
+
+<label>Personal Website</label><br>
+
+<input type="url" placeholder="https://example.com">
+
+<br><br>
+
+<label>Search Health Topic</label><br>
+
+<input type="search" placeholder="Search">
+
+<br><br>
+
+<label>Gender</label><br>
+
+<input type="radio" name="gender"> Male
+
+<input type="radio" name="gender"> Female
+
+<input type="radio" name="gender"> Other
+
+<br><br>
+
+<label>Healthy Habits</label><br>
+
+<input type="checkbox"> Drink Water Daily
+
+<br>
+
+<input type="checkbox"> Exercise Regularly
+
+<br>
+
+<input type="checkbox"> Eat Fruits & Vegetables
+
+<br>
+
+<input type="checkbox"> Sleep 8 Hours
+
+<br><br>
+
+<label>Blood Group</label><br>
+
+<select>
+
+<option>Select</option>
+
+<option>A+</option>
+
+<option>A-</option>
+
+<option>B+</option>
+
+<option>B-</option>
+
+<option>AB+</option>
+
+<option>AB-</option>
+
+<option>O+</option>
+
+<option>O-</option>
+
+</select>
+
+<br><br>
+
+<label>Upload Health Report</label><br>
+
+<input type="file">
+
+<br><br>
+
+<label>Health Rating</label><br>
+
+<input type="range" min="0" max="100">
+
+<br><br>
+
+<label>Tell us about your Health Goals</label><br>
+
+<textarea rows="6" cols="50"
+placeholder="Write your health goals here..."></textarea>
+
+<br><br>
+
+<label>Profile Completion</label>
+
+<br><br>
+
+<progress value="80" max="100"></progress>
+
+<br><br>
+
+<input type="hidden" value="HealthBlog">
+
+<input type="button" value="Save">
+
+<input type="submit" value="Submit">
+
+<input type="reset" value="Reset">
+
+</fieldset>
+
+</form>
+
+</section>
+
+<section>
+
+<h2>💡 Daily Health Tips</h2>
+
+<p>
+✔ Drink plenty of water every day.
+</p>
+
+<p>
+✔ Eat fresh fruits and vegetables.
+</p>
+
+<p>
+✔ Exercise for at least 30 minutes daily.
+</p>
+
+<p>
+✔ Get 7–8 hours of quality sleep.
+</p>
+
+<p>
+✔ Practice meditation to reduce stress.
+</p>
+
+<p>
+✔ Avoid smoking and excessive junk food.
+</p>
+
+</section>
+<section>
+
+<h2>📞 Contact Us</h2>
+
+<p>
+If you have any health-related questions or suggestions, feel free to contact us.
+We are here to promote a healthy lifestyle for everyone.
+</p>
+
+<table>
+
+<tr>
+<th>Contact Type</th>
+<th>Details</th>
+</tr>
+
+<tr>
+<td>Email</td>
+<td>healthwellnessblog@gmail.com</td>
+</tr>
+
+<tr>
+<td>Phone</td>
+<td>+91 9876543210</td>
+</tr>
+
+<tr>
+<td>Location</td>
+<td>Coimbatore, Tamil Nadu, India</td>
+</tr>
+
+<tr>
+<td>Website</td>
+<td>
+<a href="https://www.who.int" target="_blank">
+www.healthwellnessblog.com
+</a>
+</td>
+</tr>
+
+</table>
+
+</section>
+
+<section>
+
+<h2>🌟 Why Choose Healthy Living?</h2>
+
+<p>
+A healthy lifestyle helps prevent diseases, improves mental health,
+boosts immunity, increases energy levels, and promotes a longer,
+happier life.
+</p>
+
+<p>
+Remember,
+<b>"Health is Wealth."</b>
+Taking small healthy steps every day creates a better future.
+</p>
+
+</section>
+
+<hr>
+
+<footer>
+
+<h2>🌿 Health & Wellness Blog 🌿</h2>
+
+<p>
+Eat Healthy | Stay Active | Live Happy
+</p>
+
+<p>
+Designed by: Your Name
+</p>
+
+<p>
+Department of Computer Science
+</p>
+
+<p>
+Web Technology Laboratory
+</p>
+
+<p>
+© 2026 Health & Wellness Blog. All Rights Reserved.
+</p>
+
+</footer>
+
+</div>
+
+<!-- End of Health & Wellness Blog -->
+
+</body>
+
+</html>
