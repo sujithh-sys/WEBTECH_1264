@@ -1,0 +1,641 @@
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Health and Wellness Blog</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🌿 Health and Wellness Blog</h1>
+        <p>Simple Ideas for a Healthier Life</p>
+    </header>
+
+    <!-- Search and Filter -->
+    <section class="controls">
+
+        <input type="text" id="searchBox"
+               placeholder="Search health tips...">
+
+        <select id="filterRating">
+            <option value="all">All Ratings</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+        </select>
+
+        <button id="clearBtn">Clear All Posts</button>
+
+    </section>
+
+    <!-- Add Wellness Post -->
+    <section class="form-section">
+
+        <h2>Add a Wellness Post</h2>
+
+        <fieldset>
+
+            <label>
+                Post Title:
+                <input type="text" id="postTitle"
+                       placeholder="Enter post title">
+            </label>
+
+            <label>
+                Category:
+
+                <select id="postCategory">
+                    <option value="Nutrition">Nutrition</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Mental Wellness">Mental Wellness</option>
+                    <option value="Healthy Habits">Healthy Habits</option>
+                    <option value="Sleep">Sleep</option>
+                </select>
+            </label>
+
+            <label>
+                Rating:
+
+                <select id="postRating">
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Star</option>
+                </select>
+            </label>
+
+            <label>
+                Your Health Tip:
+
+                <textarea id="postText" rows="3"
+                          placeholder="Write your health tip..."></textarea>
+            </label>
+
+            <button id="addBtn">Add Post</button>
+
+            <span id="errorMsg" class="error"></span>
+
+        </fieldset>
+
+    </section>
+
+    <!-- Blog Statistics -->
+    <section class="stats">
+
+        <h2>Blog Statistics</h2>
+
+        <p>Total Posts: <span id="totalCount">0</span></p>
+
+        <p>Average Rating:
+            <span id="avgRating">0.0</span> ⭐
+        </p>
+
+        <p>Top Rated Post:
+            <span id="topPost">—</span>
+        </p>
+
+    </section>
+
+    <!-- Display Posts -->
+    <section class="reviews-section">
+
+        <h2>Health and Wellness Posts</h2>
+
+        <div id="postContainer"></div>
+
+        <p id="noResults" class="no-results"
+           style="display:none;">
+            No posts match your search.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 Health and Wellness Blog |
+            Web Technology Lab | URK24CS1264
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+CSS:
+/* General Styling */
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f1f8e9;
+    color: #263238;
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(135deg, #1b5e20, #43a047);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin-top: 8px;
+}
+
+/* General Sections */
+
+section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Search and Filter */
+
+.controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.controls input,
+.controls select {
+    padding: 10px;
+    border: 1px solid #b7c9b1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.controls input {
+    flex: 1 1 300px;
+}
+
+/* Form */
+
+.form-section fieldset {
+    background: white;
+    border: 1px solid #c8d8c1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-section label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.form-section input,
+.form-section select,
+.form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #c5d1c0;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* Buttons */
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#addBtn {
+    background: #2e7d32;
+    color: white;
+}
+
+#addBtn:hover {
+    background: #1b5e20;
+}
+
+#clearBtn {
+    background: #c0392b;
+    color: white;
+}
+
+#clearBtn:hover {
+    background: #96281b;
+}
+
+/* Error Message */
+
+.error {
+    color: #c0392b;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* Statistics */
+
+.stats {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stats h2 {
+    margin-top: 0;
+}
+
+#totalCount,
+#avgRating,
+#topPost {
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+/* Wellness Post Cards */
+
+#postContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 15px;
+}
+
+.post-card {
+    background: white;
+    border-left: 5px solid #2e7d32;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.post-card h3 {
+    margin-top: 0;
+}
+
+.post-card .category {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #1b5e20;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.post-card .stars {
+    color: #f1c40f;
+    margin-top: 8px;
+}
+
+.post-card p.text {
+    font-size: 14px;
+    color: #444;
+    margin: 10px 0;
+}
+
+/* Delete Button */
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #eee;
+    color: #c0392b;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+    color: white;
+}
+
+/* No Results */
+
+.no-results {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: #526052;
+}
+
+/* Responsive Design */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls input,
+    .controls select,
+    .controls button {
+        width: 100%;
+    }
+
+}
+
+JAVA SCRIPT
+/* 1. Get Element References */
+
+const postTitle = document.getElementById("postTitle");
+const postCategory = document.getElementById("postCategory");
+const postRating = document.getElementById("postRating");
+const postText = document.getElementById("postText");
+
+const addBtn = document.getElementById("addBtn");
+const clearBtn = document.getElementById("clearBtn");
+const errorMsg = document.getElementById("errorMsg");
+
+const postContainer = document.getElementById("postContainer");
+const noResults = document.getElementById("noResults");
+
+const searchBox = document.getElementById("searchBox");
+const filterRating = document.getElementById("filterRating");
+
+const totalCount = document.getElementById("totalCount");
+const avgRating = document.getElementById("avgRating");
+const topPost = document.getElementById("topPost");
+
+
+/* 2. Data Store */
+
+let posts = [];
+
+
+/* 3. Add a Wellness Post */
+
+function addPost() {
+
+    const title = postTitle.value.trim();
+    const category = postCategory.value;
+    const rating = parseInt(postRating.value);
+    const text = postText.value.trim();
+
+    if (title === "" || text === "") {
+        errorMsg.textContent =
+            "Please enter a post title and health tip.";
+        return;
+    }
+
+    errorMsg.textContent = "";
+
+    const post = {
+        id: Date.now(),
+        title: title,
+        category: category,
+        rating: rating,
+        text: text
+    };
+
+    posts.push(post);
+
+    postTitle.value = "";
+    postText.value = "";
+    postRating.value = "5";
+
+    renderPosts();
+    updateStats();
+}
+
+
+/* 4. Display Wellness Posts */
+
+function renderPosts() {
+
+    const searchTerm = searchBox.value.toLowerCase().trim();
+    const ratingFilter = filterRating.value;
+
+    const filtered = posts.filter(function (p) {
+
+        const matchesSearch =
+            p.title.toLowerCase().includes(searchTerm) ||
+            p.category.toLowerCase().includes(searchTerm) ||
+            p.text.toLowerCase().includes(searchTerm);
+
+        const matchesRating =
+            ratingFilter === "all" ||
+            p.rating === parseInt(ratingFilter);
+
+        return matchesSearch && matchesRating;
+
+    });
+
+    postContainer.innerHTML = "";
+
+    if (filtered.length === 0) {
+        noResults.style.display = "block";
+        return;
+    }
+
+    noResults.style.display = "none";
+
+    filtered.forEach(function (p) {
+
+        const card = document.createElement("div");
+        card.className = "post-card";
+
+        const titleEl = document.createElement("h3");
+        titleEl.textContent = p.title;
+
+        const categoryEl = document.createElement("span");
+        categoryEl.className = "category";
+        categoryEl.textContent = p.category;
+
+        const starsEl = document.createElement("div");
+        starsEl.className = "stars";
+
+        starsEl.textContent =
+            "★".repeat(p.rating) +
+            "☆".repeat(5 - p.rating);
+
+        const textEl = document.createElement("p");
+        textEl.className = "text";
+        textEl.textContent = p.text;
+
+        const delBtn = document.createElement("button");
+        delBtn.className = "delete-btn";
+        delBtn.textContent = "Delete";
+
+        delBtn.addEventListener("click", function () {
+            deletePost(p.id);
+        });
+
+        card.appendChild(titleEl);
+        card.appendChild(categoryEl);
+        card.appendChild(starsEl);
+        card.appendChild(textEl);
+        card.appendChild(delBtn);
+
+        postContainer.appendChild(card);
+
+    });
+
+}
+
+
+/* 5. Delete a Wellness Post */
+
+function deletePost(id) {
+
+    posts = posts.filter(function (p) {
+        return p.id !== id;
+    });
+
+    renderPosts();
+    updateStats();
+
+}
+
+
+/* 6. Update Blog Statistics */
+
+function updateStats() {
+
+    const total = posts.length;
+
+    totalCount.textContent = total;
+
+    if (total === 0) {
+
+        avgRating.textContent = "0.0";
+        topPost.textContent = "—";
+
+        return;
+    }
+
+    const sum = posts.reduce(function (acc, p) {
+        return acc + p.rating;
+    }, 0);
+
+    avgRating.textContent = (sum / total).toFixed(1);
+
+    let best = posts[0];
+
+    posts.forEach(function (p) {
+
+        if (p.rating > best.rating) {
+            best = p;
+        }
+
+    });
+
+    topPost.textContent =
+        best.title + " (" + best.rating + " Stars)";
+
+}
+
+
+/* 7. Event Handling */
+
+// Add Post button
+addBtn.addEventListener("click", addPost);
+
+// Search while typing
+searchBox.addEventListener("keyup", renderPosts);
+
+// Filter by rating
+filterRating.addEventListener("change", renderPosts);
+
+// Clear all posts
+clearBtn.addEventListener("click", function () {
+
+    if (posts.length === 0) {
+        return;
+    }
+
+    if (confirm("Are you sure you want to clear all posts?")) {
+
+        posts = [];
+
+        renderPosts();
+        updateStats();
+
+    }
+
+});
+
+// Press Enter in the title field
+postTitle.addEventListener("keydown", function (e) {
+
+    if (e.key === "Enter") {
+
+        e.preventDefault();
+        addPost();
+
+    }
+
+});
+
+
+/* 8. Initial Sample Posts */
+
+window.addEventListener("load", function () {
+
+    posts.push({
+        id: 1,
+        title: "Benefits of Daily Walking",
+        category: "Fitness",
+        rating: 5,
+        text: "A daily walk can support fitness and build a healthy routine."
+    });
+
+    posts.push({
+        id: 2,
+        title: "Eat a Balanced Diet",
+        category: "Nutrition",
+        rating: 5,
+        text: "Include fruits, vegetables, whole grains and protein foods."
+    });
+
+    posts.push({
+        id: 3,
+        title: "Take Time to Relax",
+        category: "Mental Wellness",
+        rating: 4,
+        text: "Short breaks and calm breathing can help manage everyday stress."
+    });
+
+    renderPosts();
+    updateStats();
+
+});
