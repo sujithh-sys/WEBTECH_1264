@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 6 - JS Styles & Animations (Health & Wellness Blog)</title>
+
+    <style>
+        /* General Page Styling */
+        * {
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f1f8e9;
+            color: #263238;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, #1b5e20, #43a047);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 6px 0 0;
+            font-size: 18px;
+        }
+
+        /* Container Sections */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c8d8c1;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #1b5e20;
+            border-bottom: 2px solid #e8f5e9;
+            padding-bottom: 8px;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 18px;
+            font-size: 16px;
+            font-weight: bold;
+            background: #2e7d32;
+            color: white;
+            margin-right: 5px;
+        }
+
+        button:hover {
+            background: #1b5e20;
+        }
+
+        /* Question 1: Digital Clock Styling */
+        #wellnessClock {
+            font-size: 26px;
+            font-weight: bold;
+            color: #1b5e20;
+            background: #e8f5e9;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        /* Question 2: Dynamic Background Container */
+        #bgContainer {
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Question 3: Text Zoom */
+        #para1 {
+            font-size: 16px;
+            cursor: pointer;
+            transition: font-size 0.3s ease;
+            color: #444;
+            line-height: 1.6;
+            padding: 12px;
+            background: #e8f5e9;
+            border-left: 5px solid #2e7d32;
+            border-radius: 4px;
+        }
+
+        /* Question 4: Animated Ticker Banner */
+        #tickerContainer {
+            width: 100%;
+            height: 40px;
+            background: #1b5e20;
+            overflow: hidden;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        #wellnessTicker {
+            position: absolute;
+            left: 0px;
+            top: 8px;
+            white-space: nowrap;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Question 5: Member List Styling */
+        .member-item {
+            padding: 10px;
+            margin: 6px 0;
+            border-radius: 6px;
+            background: #f1f8e9;
+            border: 1px solid #c8d8c1;
+        }
+
+        .before-2000 {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        .after-2000 {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            color: #526052;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Health and Wellness Blog</h1>
+        <p>Ex 6: JS Styles, Timing Events & Animations</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Real-Time Wellness Digital Clock -->
+        <div class="card">
+            <h2>1. Live Wellness Routine Clock</h2>
+            <p>Real-time timestamp powered by JavaScript <code>setInterval()</code> and <code>Date</code> object:</p>
+            <div id="wellnessClock">00:00:00</div>
+        </div>
+
+        <!-- 2. Dynamic Background Color Changer -->
+        <div class="card">
+            <h2>2. Dynamic Background Color (30-Sec Auto Cycle)</h2>
+            <div id="bgContainer">
+                <p>This wellness tips panel automatically changes background colors every 30 seconds using randomized RGB values.</p>
+            </div>
+        </div>
+
+        <!-- 3. Reader Accessibility Text Zoom -->
+        <div class="card">
+            <h2>3. Health Tip Reader Accessibility Mode</h2>
+            <p>Hover your mouse cursor over the paragraph below to enlarge font size for easier reading:</p>
+            <p id="para1" onmouseover="incSize()" onmouseout="decSize()">
+                DAILY WELLNESS TIP: Maintaining a balanced diet rich in whole foods, practicing mindful deep breathing for 5 minutes, and staying hydrated throughout the day significantly improves energy levels and mental clarity.
+            </p>
+        </div>
+
+        <!-- 4. Moving Image/Ticker Animation -->
+        <div class="card">
+            <h2>4. Animated Health Tip Banner</h2>
+            <div id="tickerContainer">
+                <span id="wellnessTicker">🌿 TODAY'S HIGHLIGHT: 30 minutes of daily walking boosts cardiovascular health & daily productivity...</span>
+            </div>
+            <br>
+            <button onclick="startTicker()">Start Ticker</button>
+            <button onclick="stopTicker()">Stop Ticker</button>
+        </div>
+
+        <!-- 5. Wellness Authors Directory -->
+        <div class="card">
+            <h2>5. Health Blog Authors Directory (DOB Categorization)</h2>
+            <p>Iterating through an array of student objects to categorize authors born before vs after year 2000:</p>
+            <div id="authorList"></div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Health and Wellness Blog</p>
+        <p>Copyright 2026-2027 | URK24CS1264 | Web Technology Lab</p>
+    </footer>
+
+    <!-- JavaScript Implementation -->
+    <script>
+        // =========================================================
+        // 1. Digital Clock (setInterval & Date Object)
+        // =========================================================
+        function displayClock() {
+            var d = new Date();
+            var hours = d.getHours();
+            var minutes = d.getMinutes();
+            var seconds = d.getSeconds();
+
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            document.getElementById("wellnessClock").innerHTML = hours + ":" + minutes + ":" + seconds;
+        }
+        displayClock();
+        setInterval(displayClock, 1000);
+
+        // =========================================================
+        // 2. Dynamic Background Color Changer (Every 30 Seconds)
+        // =========================================================
+        function setBackgroundColor() {
+            var red = Math.floor(Math.random() * 256);
+            var green = Math.floor(Math.random() * 256);
+            var blue = Math.floor(Math.random() * 256);
+
+            var color = "rgb(" + red + "," + green + "," + blue + ")";
+            document.getElementById("bgContainer").style.backgroundColor = color;
+        }
+        setBackgroundColor();
+        setInterval(setBackgroundColor, 30000); // 30,000 ms = 30 seconds
+
+        // =========================================================
+        // 3. Reader Accessibility Text Zoom (onmouseover / onmouseout)
+        // =========================================================
+        function incSize() {
+            document.getElementById("para1").style.fontSize = "24px";
+        }
+
+        function decSize() {
+            document.getElementById("para1").style.fontSize = "16px";
+        }
+
+        // =========================================================
+        // 4. Scrolling Banner Ticker (setTimeout Animation)
+        // =========================================================
+        var tickerObj = document.getElementById("wellnessTicker");
+        var animate = null;
+
+        function moveRight() {
+            var currentPos = parseInt(tickerObj.style.left || 0);
+            // Reset position when ticker moves past 600px
+            tickerObj.style.left = (currentPos > 600 ? -400 : currentPos + 2) + "px";
+            animate = setTimeout(moveRight, 15);
+        }
+
+        function startTicker() {
+            stopTicker();
+            moveRight();
+        }
+
+        function stopTicker() {
+            clearTimeout(animate);
+        }
+
+        // Auto-start ticker on page load
+        startTicker();
+
+        // =========================================================
+        // 5. Array of Objects & DOB Categorization (< 2000 vs >= 2000)
+        // =========================================================
+        var authors = [
+            { name: 'John Doe', r_num: 'UR13CS129', yob: 1995 },
+            { name: 'Joseph Mark', r_num: 'UR18CS456', yob: 1998 },
+            { name: 'Anita Roy', r_num: 'UR21CS789', yob: 2001 },
+            { name: 'URK24CS1264 Student', r_num: 'URK24CS1264', yob: 2004 }
+        ];
+
+        var outputHtml = "";
+        for (var i = 0; i < authors.length; i++) {
+            outputHtml += "<div class='member-item'>" +
+                "<strong>" + authors[i].name + "'s</strong> Register Number is " + authors[i].r_num + ". ";
+
+            if (authors[i].yob < 2000) {
+                outputHtml += "<span class='before-2000'>Senior Contributor (Born before 2000 - " + authors[i].yob + ")</span>";
+            } else {
+                outputHtml += "<span class='after-2000'>Junior Contributor (Born in/after 2000 - " + authors[i].yob + ")</span>";
+            }
+            outputHtml += "</div>";
+        }
+
+        document.getElementById("authorList").innerHTML = outputHtml;
+    </script>
+</body>
+</html>
